@@ -67,6 +67,7 @@ function App() {
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const selectedOption = options[selectedOptionIndex];
+  const [url, setUrl] = useState("https://source.unsplash.com/EwKXn5CapA4");
 
   function handleSlideChange({ target }) {
     setOptions((prevOptions) => {
@@ -82,13 +83,19 @@ function App() {
       return `${option.property}(${option.value}${option.unit})`;
     });
 
-    return { filter: filters.join(" ") };
+    return {
+      filter: filters.join(" "),
+      backgroundImage: "url(" + url + ")",
+    };
+  }
+  function getURL(data) {
+    setUrl(data);
   }
 
   return (
     <div className="container">
       <div className="image-url">
-        <ImageUrl />
+        <ImageUrl onChange={getURL} />
       </div>
       <div className="main-image" style={getImageStyle()}></div>
       <div className="sidebar">
