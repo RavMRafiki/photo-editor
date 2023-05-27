@@ -53,6 +53,13 @@ const DEFAULT_OPTIONS = [
     range: { min: 0, max: 20 },
     unit: "px",
   },
+  {
+    name: "Invert",
+    property: "invert",
+    value: 0,
+    range: { min: 0, max: 1 },
+    unit: "00%",
+  },
 ];
 
 function App() {
