@@ -67,7 +67,9 @@ function App() {
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const selectedOption = options[selectedOptionIndex];
-  const [url, setUrl] = useState("https://source.unsplash.com/EwKXn5CapA4");
+  const [url, setUrl] = useState(
+    "https://images.pexels.com/photos/2286895/pexels-photo-2286895.jpeg?cs=srgb&dl=pexels-r-fera-2286895.jpg&fm=jpg"
+  );
 
   function handleSlideChange({ target }) {
     setOptions((prevOptions) => {
