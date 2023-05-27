@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Slider from "./Slider";
 import SidebarItem from "./SidebarItem";
+import ImageUrl from "./ImageUrl";
 
 const DEFAULT_OPTIONS = [
   {
@@ -86,6 +87,9 @@ function App() {
 
   return (
     <div className="container">
+      <div className="image-url">
+        <ImageUrl />
+      </div>
       <div className="main-image" style={getImageStyle()}></div>
       <div className="sidebar">
         {options.map((option, index) => {

@@ -9,13 +9,32 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
+    "url sidebar"
     "image sidebar"
     "slider sidebar";
   height: 100vh;
   width: 100vw;
   background-color: #dadada;
+}
+.image-url {
+  grid-area: url;
+  background-color: hsl(265, 100%, 86%);
+  border-bottom: 1px solid hsl(265, 100%, 56%);
+}
+.url {
+  width: 100%;
+}
+input {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  height: 2.9rem;
+  text-align: center;
 }
 .main-image {
   grid-area: image;
@@ -42,6 +61,7 @@ body {
   padding: 1rem;
   position: relative;
   transition: bacground-color 150ms;
+  width: 100%;
 }
 .sidebar-item:hover,
 .sidebar-item:focus {
